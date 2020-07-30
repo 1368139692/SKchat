@@ -1,0 +1,281 @@
+options:
+	chatcooldown: 0.5 seconds
+	chatmessage: &6&lSKchat&f&l>>>&f太...太快~了,人家要受不了啦~,请...慢一点~
+	replacewords: &6&lSKchat&f
+on load:
+    send "&6&lSKchat&f&l>>>&f已&a加载" to the console
+on load:
+    send "&6&lSKchat&f&l>>>&f已&c卸载" to the console
+on join:
+    set {skchat.cooldown.%player%} to true
+on quit:
+    set {skchat.cooldown.%player%} to true
+#防刷屏
+on chat:
+    if {skchat.cooldown.%player%} = true:
+        set {skchat.cooldown.%player%} to false
+        wait {@chatcooldown} seconds
+        set {skchat.cooldown.%player%} to true
+    else:
+        player doesn't have permission "skchat.bypass"
+        cancel event
+        message "{@chatmessage}"
+#防脏话
+on chat:
+    replace all "骚逼","贱人","2B","傻B","傻蛋","蠢蛋","蠢货","婊子","犊子","阳痿","二逼","猥琐","变态","没玛","喝尿","吃屎","叼","去你妈的","cao","泥妈","妮玛","妮玛","迷你世界","nm","妮玛","吊毛","叼毛","狗叼","狗吊","孤儿","尼玛","泥玛","尼妈","你玛","艹","fuck","傻逼","sb","煞笔","傻比","沙比","沙雕","傻吊","操","你妈","垃圾","弱智","智障","屑","死妈东西","狗东西","草你妈","没妈","你妈死了","bitch","nmsl","tm","杂种","个逼","废柴","脑残","窝囊" and "白痴" with "{@replacewords}" in the message
+#符号
+    replace all "[方1]" with "■" in the message
+    replace all "[方2]" with "□" in the message
+    replace all "[方3]" with "█" in the message
+    replace all "[三1]" with "▲" in the message
+    replace all "[三2]" with "▶" in the message
+    replace all "[三3]" with "▼" in the message
+    replace all "[三4]" with "◀" in the message
+    replace all "[三5]" with "△" in the message
+    replace all "[三6]" with "▷" in the message
+    replace all "[三7]" with "▽" in the message
+    replace all "[三8]" with "◁" in the message
+    replace all "[线1]" with "┃" in the message
+    replace all "[线2]" with "┋" in the message
+    replace all "[括号1]" with "『』" in the message
+    replace all "[括号2]" with "❰❱" in the message
+    replace all "[括号3]" with "❬❭" in the message
+    replace all "[箭头1]" with "→" in the message
+    replace all "[箭头2]" with "→" in the message
+    replace all "[箭头3]" with "➠" in the message
+    replace all "[箭头4]" with "➤" in the message
+    replace all "[箭头5]" with "➪" in the message
+    replace all "[箭头6]" with "⇐" in the message
+    replace all "[括号7]" with "⇒" in the message
+    replace all "[括号8]" with "⇑" in the message
+    replace all "[箭头9]" with "⇓" in the message
+    replace all "[箭头10]" with "⇄" in the message
+    replace all "[箭头11]" with "➥" in the message
+    replace all "[箭头12]" with "↻" in the message
+    replace all "[箭头13]" with "➪" in the message
+    replace all "[箭头14]" with "⇲" in the message
+    replace all "[勾1]" with "✔" in the message
+    replace all "[勾2]" with "✓" in the message
+    replace all "[叉1]" with "✘" in the message
+    replace all "[叉2]" with "✗" in the message
+    replace all "[信1]" with "✉" in the message
+    replace all "[生化1]" with "☣" in the message
+#颜文字
+    replace all "HI" with "Hi~ o(*￣▽￣*)ブ" in the message
+    replace all "[拜拜1]" with "ヾ(￣▽￣)Bye~Bye~" in the message
+    replace all "[难受1]" with "இдஇ" in the message
+    replace all "[难受2]" with "༼ಢ_ಢ༽" in the message
+    replace all "[难受3]" with "(>﹏<)" in the message
+    replace all "[生气1]" with "┻━┻︵╰(‵□′)╯︵┻━┻" in the message
+    replace all "[惊讶1]" with "( ﾟдﾟ)" in the message
+    replace all "[惊讶1]" with "Σ( ° △ °|||)︴" in the message
+    replace all "[鄙视1]" with "凸-_-凸" in the message
+    replace all "[开心1]" with "(/◕ヮ◕)/" in the message
+    replace all "[示爱1]" with "٩(♡ε♡ )۶" in the message
+    replace all "[示爱2]" with "（づ￣3￣）づ╭❤～" in the message
+    replace all "[无语1]" with "(-̩̩-̩̩͡_-̩̩-̩̩͡)" in the message
+    replace all "[盯1]" with " (◉ω◉)" in the message
+    replace all "[钱1]" with "[̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅]" in the message
+on chat:
+	if {skchat.colour.%player%} = 1:
+		set message to "&1%message%"
+	if {skchat.colour.%player%} = 2:
+		set message to "&2%message%"
+	if {skchat.colour.%player%} = 3:
+		set message to "&3%message%"
+	if {skchat.colour.%player%} = 4:
+		set message to "&4%message%"
+	if {skchat.colour.%player%} = 5:
+		set message to "&5%message%"
+	if {skchat.colour.%player%} = 6:
+		set message to "&6%message%"
+	if {skchat.colour.%player%} = 7:
+		set message to "&7%message%"
+	if {skchat.colour.%player%} = 8:
+		set message to "&8%message%"
+	if {skchat.colour.%player%} = 9:
+		set message to "&9%message%"
+	if {skchat.colour.%player%} = 10:
+		set message to "&e%message%"
+	if {skchat.colour.%player%} = 11:
+		set message to "&d%message%"
+	if {skchat.colour.%player%} = 12:
+		set message to "&a%message%"
+	if {skchat.colour.%player%} = 13:
+		set message to "&b%message%"
+	if {skchat.colour.%player%} = 14:
+		set message to "&c%message%"
+command /skchat.c.0:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        message "&6&lSKchat&f&l>>>&f聊天颜色已关闭"
+command /skchat.c.1:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 1
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.2:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 2
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.3:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 3
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.4:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 4
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.5:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 5
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.6:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 6
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.7:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 7
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.8:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 8
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.9:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 9
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.10:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 10
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.11:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 11
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.12:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 12
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.13:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 13
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.c.14:
+    permission:skchat.colour
+    permission message:&6&lSKchat&f&l>>>&f您没有足够的权限%
+    trigger:
+        set {skchat.colour.%player%} to 14
+        message "&6&lSKchat&f&l>>>&f聊天颜色已更新"
+command /skchat.id:
+    description: &6&lSKchat&f&l>>>&f显示手上物品的信息
+    permission:skchat.id
+    trigger:
+        message "&6&lSKchat&f&l>>>&f您手上的物品种类为 &a%type of tool%"
+        message "&6&lSKchat&f&l>>>&f您手上的物品ID为 &a%id of tool%"
+command /skchat.about:
+    trigger:
+        message "&r"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+        message "&r"
+        message "                       &f作者:LIGH_T"
+        message "                      &f插件版本:2.0"
+        message "            &f插件BUG反馈:https://discord.gg/fSWTMj7"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+command /skchat.c.list:
+    trigger:
+        message "&r"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+        message "&r"
+        message "              &f1.&1█ &f2.&2█ &f3.&3█ &f4.&4█&f5.&5█&f6.&6█&f7.&7█"
+        message "            &f8.&8█ &f9.&9█ &f10.&e█ &f11.&d█&f12.&a█&f13.&b█&f14.&c█"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+command /skchat.f.list:
+    trigger:
+        message "&r"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+        message "&r"
+        message "&f■[方1] □[方2] █[方3] ▲[三1] ▶[三2] ▼[三3] ◀[三4] △[三5] ▷[三6]"
+        message "&f▽[三7] ◁[三8] ┃[线1] ┋[线2] 『』[括号1] ❰❱[括号2] ❬❭[括号3] →[箭头1] "
+        message "&f→[箭头2] →[箭头3] ➤[箭头4] ➪[箭头5] ⇐[箭头6] ⇒[括号7] ⇑[括号8]"
+        message "&f⇓[箭头9] ⇄[箭头10] ➥[箭头11] ↻[箭头12] ➪[箭头13] ⇲[箭头14] ✔[勾1]"
+        message "&f✓[勾2] ✘[叉1] ✗[叉2] ✉[信1] ☣[生化1]"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+command /skchat.e.list:
+    trigger:
+        message "&r"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+        message "&r"
+        message "&f   [HI] Hi~ o(*￣▽￣*)ブ"
+        message "&f   [拜拜1] ヾ(￣▽￣)Bye~Bye~"
+        message "&f   [难受1] இдஇ"
+        message "&f   [难受2] ಢ_ಢ"
+        message "&f   [难受3] (>﹏<)"
+        message "&f   [生气1] ┻━┻︵╰(‵□′)╯︵┻━┻"
+        message "&f   [惊讶1] ( ﾟдﾟ)"
+        message "&f   [惊讶2] Σ( ° △ °|||)︴"
+        message "&f   [鄙视1] 凸-_-凸"
+        message "&f   [开心1] (/◕ヮ◕)/"
+        message "&f   [示爱1] ٩(♡ε♡ )۶"
+        message "&f   [示爱2] （づ￣3￣）づ╭❤～"
+        message "&r   [无语1] (-̩̩-̩̩͡_-̩̩-̩̩͡)"
+        message "&f   [盯1] (◉ω◉)"
+        message "&f   [钱1]] [̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅]"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+command /skchat.reload:
+    permission:skchat.reload
+    trigger:
+        reload script "skchat"
+        message "&6&lSKchat&f&l>>>&fSKchat已重载"
+command /skchat:
+    trigger:
+        message ""
+        message ""
+        message ""
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
+        message "&r"
+        message "              &f/skchat.c.<1-14> 更换聊天颜色"
+        message "              &f/skchat.c.0 关闭聊天颜色"
+        message "              &f/skchat.c.list 查询聊天颜色"
+        message "              &f/skchat.f.list 查询符号列表"
+        message "              &f/skchat.e.list 查询表情列表"
+        message "              &f/skchat.id 查询手上物品信息"
+        message "              &f/skchat.about 关于插件"
+        message "              &f/skchat.reload 重载插件"
+        message "&r"
+        message "&6&l██████████&f&lSKCHAT&6&l██████████"
