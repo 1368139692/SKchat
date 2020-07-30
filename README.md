@@ -1,6 +1,7 @@
-＃SKchat
-▶点击Code下载ZIP 下载插件  
+
+▶点击代码下载ZIP下载插件  
 ▶或点击Releases 下载插件  
+▶下载后的插件记得重命名为 Skchat  
 ▶请加入我的Discord进行反馈 ▋https://discord.gg/fSWTMj7  
 
 ▶ 功能介绍◀  
