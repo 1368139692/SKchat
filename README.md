@@ -15,22 +15,22 @@
 ▶ 安装方法◀
 ▶前置SKRIPThttps://github.com/bensku/Skript/releases
 ▶将前置插件放入plugins启动服务器               
-▶将本插件放入plugins\Skript\scripts文件夹中   
-▶输入 /skript reload all 即可     
+▶将本插件放入plugins\Skript\scripts文件夹中     
+▶输入 /skript reload all 即可       
 
-▶ 插件指令◀
-▶/skchat.c.<1-14> 更换聊天颜色
-▶/skchat.c.0 关闭聊天颜色
-▶/skchat.list 查询聊天颜色
-▶/skchat.id 查询手上物品信息
-▶/skchat.reload 重载插件
+▶ 插件指令◀  
+▶/skchat.c.<1-14> 更换聊天颜色    
+▶/skchat.c.0 关闭聊天颜色   
+▶/skchat.list 查询聊天颜色    
+▶/skchat.id 查询手上物品信息    
+▶/skchat.reload 重载插件    
 
-▶ 插件权限◀
-▶skchat.colour 更换聊天颜色
-▶skchat.bypas 绕过说话冷却
-▶skchat.reload 重载插件
-▶skchat.id 查询物品信息
+▶ 插件权限◀  
+▶skchat.colour 更换聊天颜色  
+▶skchat.bypas 绕过说话冷却  
+▶skchat.reload 重载插件  
+▶skchat.id 查询物品信息  
 
-▶ 更新内容◀
-2.0-2020.7.31▶增加了颜文字及图标符号
-1.0-2020.7.31▶第一个版本
+▶ 更新内容◀  
+2.0-2020.7.31▶增加了颜文字及图标符号  
+1.0-2020.7.31▶第一个版本  
